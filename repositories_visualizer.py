@@ -50,7 +50,7 @@ def characterize_abstractions(repository: str, abstraction: str, characterizatio
     api_group_cols.extend(
         get_api_grouping_columns(characterization_type))
 
-    print(u.data_dir)
+    #print(u.data_dir)
     df1 = u.read_csv(spark, u.data_dir + repository + ".csv") \
         .select(abstr_group_cols) \
         .fillna(".").distinct()
@@ -136,7 +136,7 @@ def visualize(repository: str, abstraction: str, characterization_type: str, app
 
 
 if __name__ == "__main__":
-    print('Hello')
+    #print('Hello')
     sc = SparkContext("local", "applying-apis")
     spark = SparkSession(sc)
 
